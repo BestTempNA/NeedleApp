@@ -1,0 +1,68 @@
+<!--
+Single web page application using AngularJS. 
+
+Application has two parts:
+    Part 1 is a modal dialog containing a simple input form. 
+        The form should accept the following fields: 
+            Name
+            Email
+        The form fields should be validated before they are accepted.
+    Part 2 is a table showing rows of data
+        Table should contain date the record was added, name and email.
+        Every new form submit should add the submitted data to the table. 
+
+Submit to github when finished.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> 
+    <script src="http://code.angularjs.org/1.2.6/angular.js"></script> 
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="appController">
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="page-header">
+            <h3>Create your Account</h3>
+        </div>
+        <form name="userForm" ng-submit="addUser(userForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{'has-error' : userForm.name.$invalid && !userForm.name.$pristine}">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" ng-model="name" required>
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">A man needs a name.</p>
+            </div>
+            
+            <div class="form-group" ng-class="{'has-error' : userForm.email.$invalid && !userForm.email.$pristine}">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" ng-model="email">
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">A man needs an email.</p>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid"><b>+</b>Submit</button>
+        </form>
+
+        <br>
+        <div class="page-header">
+            <h3>Users in Database</h3>
+        </div>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Date Added</td>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.dateAdded}}</td>
+            </tr>
+        </table>
+    </div> 
+</div>
+</body>
+</html>
