@@ -26,7 +26,7 @@ Submit to github when finished.
 <div class="container">
     <div class="col-sm-6 col-sm-offset-3">
         <div class="page-header">
-            <h3>Create your Account</h3>
+            <h3>Create User</h3>
         </div>
         <form name="userForm" ng-submit="addUser(userForm.$valid)" novalidate>
             <div class="form-group" ng-class="{'has-error' : userForm.name.$invalid && !userForm.name.$pristine}">
@@ -38,7 +38,7 @@ Submit to github when finished.
             <div class="form-group" ng-class="{'has-error' : userForm.email.$invalid && !userForm.email.$pristine}">
                 <label>Email</label>
                 <input type="email" name="email" class="form-control" ng-model="email" required>
-                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">A man needs an email.</p>
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Please enter a valid email address.</p>
             </div>
             
             <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid"><b>+</b>Submit</button>

@@ -3,10 +3,10 @@ app.controller('appController', function($scope){
 
     // Temporary DB
     $scope.users = [
-        {id:1, name:"Mr. Zorg", email:"jbez@zorg.com", dateAdded:"2001/01/01"},
+        {id:1, name:"Jean-Baptiste Emanuel Zorg", email:"jbez@zorg.com", dateAdded:"2001/01/01"},
         {id:2, name:"Corbin Dallas", email:"corbinwins@gmail.com", dateAdded:"2015/11/05"},
         {id:3, name:"Handsome Jack", email:"ceo@hyperion.com", dateAdded:"2012/07/17"},
-        {id:4, name:"Hal Jordan", email:"earth@greenlaterns.com", dateAdded:"2007/09/02"}
+        {id:4, name:"Hal Jordan", email:"earth@greenlantern.com", dateAdded:"2007/09/02"}
     ];
 
     $scope.getDate = function(){
@@ -27,7 +27,7 @@ app.controller('appController', function($scope){
 
     $scope.addUser = function(isValid){
         if(isValid){
-            $scope.users.push({id:$scope.getTotalUsers() + 1, name:$scope.name, email:$scope.email, dateAdded:$scope.getDate(), done:false});
+            $scope.users.push({id:$scope.getTotalUsers() + 1, name:$scope.name, email:$scope.email, dateAdded:$scope.getDate()});
             $scope.firstName = "";
         }
     }
