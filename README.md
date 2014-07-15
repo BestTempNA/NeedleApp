@@ -12,5 +12,3 @@ Application has two parts:
     Part 2 is a table showing rows of data
         Table should contain date the record was added, name and email.
         Every new form submit should add the submitted data to the table. 
-
-Submit to github when finished.
