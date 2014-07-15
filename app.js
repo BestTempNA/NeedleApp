@@ -26,9 +26,6 @@ app.controller('appController', function($scope){
     }
 
     $scope.addUser = function(isValid){
-        if(isValid){
-            $scope.users.push({id:$scope.getTotalUsers() + 1, name:$scope.name, email:$scope.email, dateAdded:$scope.getDate()});
-            $scope.firstName = "";
-        }
+        if(isValid) $scope.users.push({id:$scope.getTotalUsers() + 1, name:$scope.name, email:$scope.email, dateAdded:$scope.getDate()});
     }
 });
